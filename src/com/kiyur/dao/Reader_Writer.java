@@ -6,6 +6,7 @@ public class Reader_Writer {
 	 FileReader fr;
 	 File file;
      Scanner sc;
+     String name;
 	Reader_Writer()
     {
   try	{	  file = new File("C:\\Users\\pankaj\\Desktop\\test.txt");
