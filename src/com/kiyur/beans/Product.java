@@ -1,5 +1,5 @@
 package com.kiyur.beans;
-import com.kiyur.controller.*;
+
 public enum Product {
   kiyur_kidney_health(200),kiyur_faceCream(300),kiyur_facewash(200),kiyur_vutamintablet(250),kiyur_liverhealth(150),kiyur_juice(233);
 	private int num;
