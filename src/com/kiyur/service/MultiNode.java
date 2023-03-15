@@ -1,4 +1,4 @@
-package kiyur.developingTree;
+package com.kiyur.service;
 import java.util.*;
 public class MultiNode {
 	static double companyProfit;
