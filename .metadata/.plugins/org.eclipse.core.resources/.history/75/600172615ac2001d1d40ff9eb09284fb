@@ -1,0 +1,41 @@
+package com.kiyur.dao;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.util.Scanner;
+
+
+
+import java.util.Scanner;
+import java.io.*;
+
+
+public class myReader
+{
+   public static void main(String[] args) throws IOException
+   {
+      String fileName, theText;
+      Scanner inputKeyScanner;
+      Scanner inputFileScanner;
+      File inputFile;
+
+      
+      System.out.println("\nPlease enter the name of a file to be read: ");
+      inputKeyScanner = new Scanner(System.in);  
+      fileName = inputKeyScanner.nextLine();     
+
+      inputFile = new File(fileName);            
+      inputScanner = new Scanner(inputFile);    
+
+      while(inputScanner.hasNext())              
+      {
+         theText = inputScanner.nextLine();      
+         System.out.println("Line: " + theText);
+      }
+   }
+}
+     
+
+}
+
+

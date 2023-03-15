@@ -1,0 +1,5 @@
+package com.maurya.dao;
+
+public class Read_Write_Data {
+
+}

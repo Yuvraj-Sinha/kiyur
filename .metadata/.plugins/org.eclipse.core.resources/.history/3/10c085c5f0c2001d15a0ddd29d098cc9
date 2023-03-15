@@ -1,0 +1,15 @@
+package com.maurya.dao;
+
+public class Read_Write_Data
+{
+//verify return boolen
+	
+//enrollement return string your data submitted
+//details of customer  and products 
+	
+	
+	  public void verify()
+	 {
+		
+	 }
+}

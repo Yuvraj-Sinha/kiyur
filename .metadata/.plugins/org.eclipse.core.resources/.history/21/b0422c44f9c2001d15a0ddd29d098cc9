@@ -1,0 +1,6 @@
+package com.maurya.dao;
+
+public class ProductAndUserDetailsStorage
+{
+
+}

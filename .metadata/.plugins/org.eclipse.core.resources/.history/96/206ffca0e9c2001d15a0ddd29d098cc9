@@ -1,0 +1,18 @@
+package com.maurya.beans;
+
+import java.util.Scanner;
+
+public class EnrollmentCustomer
+{
+            public static void main(String[] args) 
+            {
+				Scanner input = new Scanner(System.in);
+				
+				System.out.println("Enter name :");
+				 String uname=input.nextLine();
+				 System.out.println("Enter password :");
+				 int uid = input.nextInt();
+				 
+				
+			}
+}

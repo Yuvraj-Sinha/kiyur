@@ -1,0 +1,40 @@
+package com.kiyur.dao;
+
+import java.io.File;
+
+import java.io.FileInputStream;
+import java.util.Scanner;
+
+
+
+import java.util.Scanner;
+import java.io.*;
+
+
+public class Reader
+{
+	
+	public static void main(String[] args)
+	{
+	try {  
+	// Attach a file to FileInputStream for reading data and create an input stream for a file	
+	   FileInputStream fis = new FileInputStream("C:\\Users\\TrueID Pvt Ltd\\git\\kiyur\\Data.txt"); 
+	 
+	// Reading a value from a file in the form of byte. 
+	   int value = fis.read(); 
+	   System.out.println("Reading a value in byte form: " +value);
+	   
+	// Converting byte into character to see text.   
+	   System.out.print((char)value); // Displaying a single character on console.  
+	   fis.close(); // Closing input stream automatically.   
+	} catch(Exception e){
+	     System.out.println(e);
+	 }   
+	 }
+	}
+
+     
+
+
+
+

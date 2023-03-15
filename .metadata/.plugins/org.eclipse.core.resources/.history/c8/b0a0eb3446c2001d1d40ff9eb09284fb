@@ -1,0 +1,9 @@
+package com.maurya;
+
+public interface Product 
+{
+	  public int getId();
+	  public String getName();
+	  public double getPrice();
+
+}

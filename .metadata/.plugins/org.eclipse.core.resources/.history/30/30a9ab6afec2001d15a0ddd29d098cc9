@@ -1,0 +1,52 @@
+package com.maurya.dao;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+
+public class ProductAndUserDetailsStorage
+{
+      public static void main(String[] args)
+      {
+		
+    	  String productfilename = "\"C:\\E-commerce Product\\ecommerceproductmarketing\\src\\com\\maurya\\dao\\productdetails.txt\"";
+    	  String userdetails ="\"C:\\E-commerce Product\\ecommerceproductmarketing\\src\\com\\maurya\\dao\\userdetails.txt\"";
+    	  
+    	  
+    	  try 
+    	  {
+    		  
+    		  FileOutputStream productFos = new FileOutputStream(productfilename); 
+              FileOutputStream userFos = new FileOutputStream(userdetails); 
+              
+              FileInputStream productFis = new FileInputStream(productfilename); 
+              FileInputStream userFis = new FileInputStream(userdetails);
+    		  
+    		  
+    	  }
+    	  
+    	  
+         catch(Exception e)
+    	  {
+    		  
+    		  
+    		  
+    		  
+    		  
+    	  }
+    	  
+    	  
+    	  
+    	  
+    	  
+    	  
+    	  
+    	  
+    	  
+    	  
+    	  
+    	  
+    	  
+    	  
+    	  
+	  }
+}

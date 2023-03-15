@@ -1,0 +1,5 @@
+package com.maurya.beans;
+
+public class Product {
+
+}

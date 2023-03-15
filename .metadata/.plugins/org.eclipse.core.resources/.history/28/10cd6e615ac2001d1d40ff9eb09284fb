@@ -1,0 +1,30 @@
+package com.kiyur.dao;
+
+import java.io.FileInputStream;
+import java.util.Scanner;
+
+public class Reader_Writer 
+{
+	
+	public static void main(String[] args) 
+	{
+		try
+		{
+			FileInputStream fis = new FileInputStream("Data.txt");
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
+		 Object obj=fis.read();
+		 System.out.println(obj);
+		 fis.close();
+		 
+		
+	}
+	
+     
+
+}
+
+
