@@ -1,6 +1,8 @@
 package com.kiyur.beans;
 
-public class Customer {
+import java.io.Serializable;
+
+public class Customer implements Serializable {
 String name;
 long phone_No;
 String address;
@@ -35,6 +37,10 @@ public Customer(String name, long phone_No, String address, String id) {
 }
 public void setId(String id) {
 	this.id = id;
+}
+@Override
+public String toString() {
+	return "Customer [name=" + name + ", phone_No=" + phone_No + ", address=" + address + ", id=" + id + "]";
 }
 
 }
