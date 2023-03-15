@@ -4,6 +4,7 @@ public class MultiNode {
 	static double companyProfit;
 	static Node root=new Node(1,"company",0,0);
 	public static class  Node{
+		int commId;
 		String Name;
 		int id;
 		@Override
@@ -77,7 +78,14 @@ public class MultiNode {
 				{
 					break;
 				}
-				Parent.comm=Parent.comm+num;
+				if(Parent.commId==2)
+				{
+					Parent.comm=Parent.comm+num;
+				}
+				else
+				{
+					Parent.comm=Parent.comm+(num-((num/100)*10));
+				}
 				System.out.println(Parent.Name);
 				System.out.println(num);
 				System.out.println(Parent.comm);
@@ -85,24 +93,28 @@ public class MultiNode {
 		}
 		public static void printCompany()
 		{
-			
+			 
 		}
 		public static void main(String[] args) {
-		//TODO Auto-generated method stub
-		Node Parent = getParent(root,1);
-		System.out.println(Parent);
-		comm(root,1);
-		if(Parent!=null && Parent==root)
-		Parent.child.add(new Node(2,"Kishore",0,10000));
-		Node Parent1 = getParent(root,2);
-		Parent1.child.add(new Node(3,"Narendra",0,9000));
-		comm(root,2);
-		Node Parent3= getParent(root,3);
-		Parent3.child.add(new Node(4,"Yuvraj",0,9000));
-		comm(root,3);
-		Parent3.child.add(new Node(5,"raushan",0,9000));
-		comm(root,3);
-		System.out.println(q.peek());
+			//TODO Auto-generated method stub
+			Node Parent = getParent(root,1);
+			System.out.println(Parent);
+			comm(root,1);
+			if(Parent!=null && Parent==root)
+			{
+				Parent.child.add(new Node(2,"Kishore",0,10000));
+				root.child.get(0).commId=2;
+			}
+			Node Parent1 = getParent(root,2);
+			Parent1.child.add(new Node(3,"Narendra",0,9000));
+			comm(root,2);
+			Node Parent3= getParent(root,3);
+			Parent3.child.add(new Node(4,"Yuvraj",0,9000));
+			comm(root,3);
+			Parent3.child.add(new Node(5,"raushan",0,9000));
+			comm(root,3);
+			System.out.println(q.peek());
+			//System.out.println(Parent1.commId);
 
 		
 		/*System.out.println(Parent.comm);
