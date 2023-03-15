@@ -12,11 +12,11 @@ public class welcome {
 			switch(n)
 			{
 			    case 1: System.out.println("     The membership fee is 10000");
-			    		Details d=new Details();
-			    		d.detail();
+			    		// Details d=new Details();
+			    		// d.detail();
 			    		break;
-			    case 2: Details d1=new Details();
-			    		d1.product();
+			    // case 2: Details d1=new Details();
+			    // 		d1.product();
 			}
 			
 		}
