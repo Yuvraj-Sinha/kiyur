@@ -1,26 +1,27 @@
 package com.kiyur.service;
 import java.util.*;
 public class MultiNode {
-	static double companyProfit;
-	static Node root=new Node(1,"company",0,0);
+	public static double companyProfit;
+	public static Node root=new Node(1,"company",0,null,0);
 	public static class  Node{
 		int commId;
 		String Name;
 		int id;
+		String pid;
 		@Override
 		public String toString() {
 			return "Node [Name=" + Name + ", id=" + id + ", comm=" + comm + ", child=" + child + "]";
 		}
 		double comm;
 		List<Node> child=new ArrayList<>();
-		Node(String Name,int id,double comm,List<Node> l)
+		public Node(int id,String Name,double comm,String pid,int memAmount)
 		{
 			this.Name=Name;
 			this.id=id;
 			this.comm=comm;
-			child=l;
+			this.pid=pid;
 		}
-		Node(int id,String Name,double comm,int memAmount)
+		public Node(int id,String Name,double comm,int memAmount)
 		{
 			this.Name=Name;
 			this.id=id;
@@ -38,9 +39,8 @@ public class MultiNode {
 			{
 				int n=q.size();
 				while(n>0 && c==0)
-				{ //System.out.println(q.peek());
+				{ 
 					Node node=q.peek();
-					//System.out.println(node.Name);
 					if(node.id==checkid)
 					{
 						return node;
@@ -66,9 +66,9 @@ public class MultiNode {
 			Node Parent=getParent(root,id);
 			printUser(Parent);
 		}
-		public static  void comm(Node root,int ide)
+		public static  void MembershipComm(Node root,int ide)
 		{
-			int num=10000; int c=0;
+			int num=10000;
 			while(true)
 			{
 				Node Parent = getParent(root,ide);
@@ -91,64 +91,60 @@ public class MultiNode {
 				System.out.println(Parent.comm);
 			}
 		}
-		public static void printCompany()
+		
+		public static void printCompany(Node root)
 		{
-			 
+			 Queue<Node> q=new LinkedList<>();
+			 q.offer(root);
+				int c=0;
+				while(!q.isEmpty()&& c==0)
+				{
+					int n=q.size();
+					while(n>0 && c==0)
+					{ //System.out.println(q.peek());
+						Node node=q.peek();
+						//System.out.println(node.Name);
+						try {
+						System.out.println("Name-"+node.Name+"  "+"Id-"+node.id+" "+"Parent Id-"+node.pid+" "+"Commision-"+node.comm);}
+						catch(Exception e)
+						{
+							return;
+						}
+						q.remove();
+						int k=0;
+						for(int i=0;i<node.child.size();i++)
+						{
+							k++;
+							if(k==1)
+							System.out.println("Child");
+							q.add(node.child.get(i));
+						}
+					}
+					n--;
+				}
 		}
 		public static void main(String[] args) {
 			//TODO Auto-generated method stub
 			Node Parent = getParent(root,1);
 			System.out.println(Parent);
-			comm(root,1);
+			MembershipComm(root,1);
 			if(Parent!=null && Parent==root)
 			{
-				Parent.child.add(new Node(2,"Kishore",0,10000));
+				Parent.child.add(new Node(2,"Kishore",0,1+"",10000));
 				root.child.get(0).commId=2;
 			}
 			Node Parent1 = getParent(root,2);
-			Parent1.child.add(new Node(3,"Narendra",0,9000));
-			comm(root,2);
+			Parent1.child.add(new Node(3,"Narendra",0,2+"",9000));
+			MembershipComm(root,2);
 			Node Parent3= getParent(root,3);
-			Parent3.child.add(new Node(4,"Yuvraj",0,9000));
-			comm(root,3);
-			Parent3.child.add(new Node(5,"raushan",0,9000));
-			comm(root,3);
+			Parent3.child.add(new Node(4,"Yuvraj",0,3+"",9000));
+			MembershipComm(root,3);
+			Parent3.child.add(new Node(5,"raushan",0,"3",9000));
+			MembershipComm(root,3);
 			System.out.println(q.peek());
+			System.out.println(Parent3.child.get(1).pid);
+			printCompany(root);
 			//System.out.println(Parent1.commId);
-
-		
-		/*System.out.println(Parent.comm);
-		System.out.println(Parent1.comm);
-		System.out.println(Parent.comm);//
-		//System.out.println(Parent1.comm);
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		//data(root,2);
-		/*Node Parent1 = findParent(root,1);
-		//System.out.println(Parent1);
-		Parent1.child.add(new Node(3,"yuvraj",0,10000));
-		Node Parent3= findParent(root,2);
-		Parent3.child.add(new Node(5,"Narendra",0,9000));
-		System.out.println(root.child.get(0).child.get(0).Name);*/
-		
-		/*root.child.add(new Node(2,"Kishore",0,10000));
-		root.child.add(new Node(3,"yuvraj",0,10000));
-		root.child.add(new Node(4,"Raushan",0,10000));
-		root.child.get(0).child.add(new Node(5,"Narendra",0,9000));
-		System.out.println(root.Name);
-		root.child.get(0).comm=root.child.get(0).comm+(1000);
-		System.out.println(root.child.get(0).Name);
-		System.out.println(root.child.get(0).id);
-		System.out.println(root.child.get(0).child.get(0).Name);
-		System.out.println(MultiNode.companyProfit);*/
 	}
 
 }
