@@ -1,0 +1,27 @@
+package com.maurya.controller;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+import com.maurya.dao.*;
+public class Details 
+{
+
+	public static void main(String[] args) 
+	{
+		
+		List<Enrollment> enrollments = new ArrayList<Enrollment>();
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter your names :");
+		String name = sc.nextLine();
+		System.out.println("Enter name of the products :");
+		String product =sc.nextLine();
+		System.out.println("Enter your mob. no : ");
+		int mobileNumber=sc.nextInt();
+		
+		Enrollment e = new Enrollment(name,product,mobileNumber);
+		enrollments.add(e);
+
+	}
+
+}
